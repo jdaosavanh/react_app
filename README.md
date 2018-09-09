@@ -1,13 +1,17 @@
 # React/Redux Express Starter Pack
 
-#Build using bradtraversy react express starter pack but with a vagrant build so it can be isolated on
+#Build using Brad Traversy react express starter pack but with a vagrant build so it can be isolated on
 a linux environment
 
 
 #First run the command vagrant up (not gonna lie not sure if the initial syncing of file is working)
+
 #If initial sync of files did not work push all files to the vagrant
+
 #SFTP is 127.0.0.1 and port 2222
+
 #the private key in .vagrant/machines/default/virtualbox/private_key
+
 #vagrant ssh to get in
 
 vagrant up
@@ -24,10 +28,6 @@ sudo service mangod stop
 
 
 > Create full stack apps with React/Redux and Express. Run your client and server with a single command
-
-### Version Without Redux
-This version includes Redux
-[Click Here For the Version WITHOUT Redux](https://github.com/bradtraversy/react_express_starter)
 
 ## Quick Start
 
@@ -49,10 +49,3 @@ npm run client
 
 # Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
-
-## App Info
-
-### Authors
-
-Brad Traversy & Gregory Assasie
-

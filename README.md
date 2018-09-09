@@ -3,6 +3,26 @@
 #Build using bradtraversy react express starter pack but with a vagrant build so it can be isolated on
 a linux environment
 
+
+#First run the command vagrant up (not gonna lie not sure if the initial syncing of file is working)
+#If initial sync of files did not work push all files to the vagrant
+#SFTP is 127.0.0.1 and port 2222
+#the private key in .vagrant/machines/default/virtualbox/private_key
+#vagrant ssh to get in
+
+vagrant up
+
+#You are going to have to start up mongodb wit the command
+
+sudo service mangod start
+
+#To stop mongod run
+
+sudo service mangod stop
+
+#ill probably make it automatically start at some point
+
+
 > Create full stack apps with React/Redux and Express. Run your client and server with a single command
 
 ### Version Without Redux
@@ -36,10 +56,3 @@ npm run client
 
 Brad Traversy & Gregory Assasie
 
-### Version
-
-1.0.0
-
-### License
-
-This project is licensed under the MIT License

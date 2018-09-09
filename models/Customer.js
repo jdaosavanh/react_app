@@ -13,4 +13,5 @@ const CustomerSchema = new Schema({
     }
 });
 
-module.exports = Customer  = mongoose.model('customer', CustomerSchema);
+//Customers is the name of the module from the db
+module.exports = Customer  = mongoose.model('customers', CustomerSchema);

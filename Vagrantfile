@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port" , guest: 5000, host: 5000
 
   #config.vm.synced_folder  "app/", "/home/vagrant/app"
+  #config.vm.synced_folder ".", "/vagrant/", type: "rsync", rsync__exclude: ".git/"
   # Uncomment the following line to allow for symlinks
   # in the app folder. This will not work on Windows, and will
   # not work with Vagrant providers other than VirtualBox
@@ -22,9 +23,13 @@ Vagrant.configure("2") do |config|
     sudo npm install -g n -y
     sudo n latest -y
     echo "Install mongodb"
-    sudo apt-get install mongodb -y
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
+    sudo apt-get update
+    sudo apt-get install -y mongodb-org
+
     sudo npm install -g express
-    npm install -g nodemon
+    sudo npm install -g nodemon
 
     SHELL
 

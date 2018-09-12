@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     #This is because when you try to rsync /home/vagrant the private key doesn't work anymore. Not sure why. I could
     #turn off private login in but no.
-    sudo mv /vagrant/* /home/vagrant/
+    sudo cp -R /vagrant/* /home/vagrant/
 
     echo "Provisioning Virtual Machine..."
     sudo apt-get update && sudo apt-get -y upgrade

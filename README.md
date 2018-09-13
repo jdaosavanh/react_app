@@ -1,4 +1,4 @@
-# React/Redux Express Starter Pack
+# Vagrant MERN with React/Redux Express Starter Pack
 
 #Build using Brad Traversy react express starter pack but with a vagrant build so it can be isolated on
 a linux environment

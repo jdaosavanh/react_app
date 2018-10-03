@@ -4,7 +4,7 @@
 a linux environment
 
 
-#First run the command vagrant up (not gonna lie not sure if the initial syncing of file is working)
+#First run the command vagrant up 
 
 #If initial sync of files did not work push all files to the vagrant
 

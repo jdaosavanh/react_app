@@ -1,10 +1,10 @@
-# React/Redux Express Starter Pack
+# Vagrant MERN with React/Redux Express Starter Pack
 
 #Build using Brad Traversy react express starter pack but with a vagrant build so it can be isolated on
 a linux environment
 
 
-#First run the command vagrant up (not gonna lie not sure if the initial syncing of file is working)
+#First run the command vagrant up 
 
 #If initial sync of files did not work push all files to the vagrant
 

@@ -5,13 +5,17 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port" , guest: 5000, host: 5000
 
   #config.vm.synced_folder  "app/", "/home/vagrant/app"
-  #config.vm.synced_folder ".", "/vagrant/", type: "rsync", rsync__exclude: ".git/"
+  config.vm.synced_folder ".", "/vagrant", type: "rsync", disabled: false, rsync__auto: false, rsync__exclude: [".git/"]
   # Uncomment the following line to allow for symlinks
   # in the app folder. This will not work on Windows, and will
   # not work with Vagrant providers other than VirtualBox
   # config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/app", "1"]
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    #This is because when you try to rsync /home/vagrant the private key doesn't work anymore. Not sure why. I could
+    #turn off private login in but no.
+    sudo cp -R /vagrant/* /home/vagrant/
+
     echo "Provisioning Virtual Machine..."
     sudo apt-get update && sudo apt-get -y upgrade
     echo "Installing developer packages..."
@@ -30,6 +34,10 @@ Vagrant.configure("2") do |config|
 
     sudo npm install -g express
     sudo npm install -g nodemon
+
+    #Running npm so i don't have to later
+    sudo npm i /home/vagrant/
+    sudo npm i /home/vagrant/client
 
     SHELL
 
